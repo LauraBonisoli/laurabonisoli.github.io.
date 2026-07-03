@@ -81,6 +81,18 @@
     letter-spacing: 0.01em;
   }
   .site-nav nav a:hover{ color: var(--accent); }
+  @media (max-width: 640px){
+    .site-nav .wrap{
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .site-nav nav{
+      justify-content: center;
+      gap: 8px 16px;
+    }
+  }
 
   /* ---------- Hero ---------- */
   .hero{
@@ -186,10 +198,11 @@
   }
   .curve-mark circle{ fill: var(--accent); }
 
+  /* Plain ampersand — Fraunces' default "&" is too ornate for headings */
   .section-title .amp{
-  font-family: var(--sans);
-  font-weight: 500;
-  font-style: normal;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-style: normal;
   }
 
   /* ---------- Sections ---------- */
@@ -209,13 +222,23 @@
     margin: 0 0 28px;
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+    row-gap: 8px;
     gap: 10px;
+  }
+  h2.section-title .title-text{
+    flex: 0 1 auto;
+    min-width: 0;
   }
   h2.section-title::after{
     content: "";
-    flex: 1;
+    flex: 1 1 40px;
     height: 1px;
     background: var(--line);
+    align-self: center;
+  }
+  @media (max-width: 640px){
+    h2.section-title::after{ flex-basis: 100%; }
   }
 
   .lede{
@@ -356,7 +379,7 @@
 
 <section id="about">
   <div class="wrap">
-    <h2 class="section-title">About</h2>
+    <h2 class="section-title"><span class="title-text">About</span></h2>
     <p class="lede">
       I am a PhD student in Economics and Finance at the University of Verona
       (Mathematics and Data Analytics for Finance track).
@@ -381,10 +404,10 @@
         <circle cx="21" cy="9"  r="2"></circle>
         <circle cx="44" cy="2"  r="2"></circle>
       </svg>
-      Research interests
+      <span class="title-text">Research interests</span>
     </h2>
     <ul class="interests">
-      <li>Term structure modeling</li>
+      <li>Term structure modeling and path-dependent volatility</li>
       <li>Volatility modeling</li>
       <li>Computational methods for finance</li>
       <li>Risk modeling and management</li>
@@ -395,7 +418,7 @@
 
 <section id="publications">
   <div class="wrap">
-    <h2 class="section-title">Publications <span class="amp">&amp;</span> Working Papers</h2>
+    <h2 class="section-title"><span class="title-text">Publications <span class="amp">&amp;</span> Working Papers</span></h2>
     <div class="entries">
       <div class="entry">
         <div class="date">2026</div>
@@ -417,7 +440,7 @@
 
 <section id="talks" class="alt">
   <div class="wrap">
-    <h2 class="section-title">Talks <span class="amp">&amp;</span> Conference Presentations</h2>
+    <h2 class="section-title"><span class="title-text">Talks <span class="amp">&amp;</span> conference presentations</span></h2>
     <div class="entries">
       <div class="entry">
         <div class="date">2026</div>
@@ -439,7 +462,7 @@
 
 <section id="organization">
   <div class="wrap">
-    <h2 class="section-title">Conference Organization</h2>
+    <h2 class="section-title"><span class="title-text">Conference organization</span></h2>
     <div class="entries">
       <div class="entry">
         <div class="date">Jun 2025</div>
@@ -449,10 +472,10 @@
         </div>
       </div>
       <div class="entry">
-        <div class="date">May 2026</div>
+        <div class="date"><!-- inserisci data --></div>
         <div class="content">
-          <p><em>3rd Early Career Workshop in Economics & Financial Mathematics</em></p>
-          <p class="venue">Co-organizer — Verona, 12-13 May 2026</p>
+          <p><em>3rd Early Career Workshop in Economics</em></p>
+          <p class="venue">Co-organizer — <!-- inserisci luogo e data --></p>
         </div>
       </div>
     </div>
@@ -461,7 +484,7 @@
 
 <section id="teaching" class="alt">
   <div class="wrap">
-    <h2 class="section-title">Teaching experience</h2>
+    <h2 class="section-title"><span class="title-text">Teaching experience</span></h2>
     <div class="entries">
       <div class="entry">
         <div class="date">2024–2025</div>
@@ -483,10 +506,10 @@
 
 <section id="contact">
   <div class="wrap">
-    <h2 class="section-title">Contact</h2>
+    <h2 class="section-title"><span class="title-text">Contact</span></h2>
     <ul class="contact-list">
       <li><span class="label">Email</span> <a href="mailto:laura.bonisoli@univr.it">laura.bonisoli@univr.it</a></li>
-      <li><span class="label">Address</span> Department of Economics, University of Verona — Room 1.13, Palazzo Santa Marta — Via Cantarane 24, 37129 Verona, Italy</li>
+      <li><span class="label">Address</span> Department of Economics, University of Verona — Via Cantarane 24, 37129 Verona, Italy</li>
     </ul>
   </div>
 </section>
